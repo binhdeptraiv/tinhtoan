@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="number"] {
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CNTT A</h1>
+    <p>Nguyễn Bảo Quốc</p>
+    <h3>Các phép toán cơ bản</h3>
+
+    <!-- Phép nhân -->
+    <label for="num1">Phép nhân: </label>
+    <input type="number" id="num1" placeholder="Số thứ nhất"> x 
+    <input type="number" id="num2" placeholder="Số thứ hai"> =
+    <input type="text" id="result-multiply" readonly>
+    <button onclick="multiply()">Tính</button>
+    <br><br>
+
+    <!-- Phép cộng -->
+    <label for="num3">Phép cộng: </label>
+    <input type="number" id="num3" placeholder="Số thứ nhất"> + 
+    <input type="number" id="num4" placeholder="Số thứ hai"> =
+    <input type="text" id="result-add" readonly>
+    <button onclick="add()">Tính</button>
+    <br><br>
+
+    <!-- Phép trừ -->
+    <label for="num5">Phép trừ: </label>
+    <input type="number" id="num5" placeholder="Số thứ nhất"> - 
+    <input type="number" id="num6" placeholder="Số thứ hai"> =
+    <input type="text" id="result-subtract" readonly>
+    <button onclick="subtract()">Tính</button>
+    <br><br>
+
+    <!-- Phép chia -->
+    <label for="num7">Phép chia: </label>
+    <input type="number" id="num7" placeholder="Số thứ nhất"> ÷ 
+    <input type="number" id="num8" placeholder="Số thứ hai"> =
+    <input type="text" id="result-divide" readonly>
+    <button onclick="divide()">Tính</button>
+
+    <script>
+        function multiply() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result-multiply').value = num1 * num2;
+        }
+
+        function add() {
+            let num3 = parseFloat(document.getElementById('num3').value);
+            let num4 = parseFloat(document.getElementById('num4').value);
+            document.getElementById('result-add').value = num3 + num4;
+        }
+
+        function subtract() {
+            let num5 = parseFloat(document.getElementById('num5').value);
+            let num6 = parseFloat(document.getElementById('num6').value);
+            document.getElementById('result-subtract').value = num5 - num6;
+        }
+
+        function divide() {
+            let num7 = parseFloat(document.getElementById('num7').value);
+            let num8 = parseFloat(document.getElementById('num8').value);
+            if (num8 !== 0) {
+                document.getElementById('result-divide').value = num7 / num8;
+            } else {
+                alert("Không thể chia cho 0!");
+            }
+        }
+    </script>
+</body>
+</html>
